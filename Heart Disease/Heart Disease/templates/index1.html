@@ -1,0 +1,126 @@
+<!--GUI for Breast Cancer Detection Application using SVM-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Heart</title>
+  <style>
+   body
+  {
+  height: 50%;
+  background-image: url("static/image/image6.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	}
+   h1 {text-align: center;
+   }
+   align="right";
+   }
+   .head {
+      
+      font-weight: bolder;
+	  align="right";
+   }
+   .form-group 
+   {
+      padding: 5px;
+	  align="center";
+	  margin-left: 160px;
+  
+    }
+	.btn-primary {
+	margin-left: 220px;
+	}
+	
+  </style>
+  
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 style="color:white" class="head" >Heart Disease Prediction</h1>
+		<h4 style="color:white;text-align:center;">Enter The Details</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-container">
+
+          <!-- Main Input For Receiving Query to our ML -->
+          <form action="{{ url_for('predict')}}" method="post" class="form-inline">
+            <div class="row">
+              <div class="col-md-6">
+               
+              </div>
+              <div class="col-md-6">
+                <div class="container">
+                  
+                  <div class="form-group">
+                    <label style="color:white" for="age" >Age</label>
+                    <input type="text" class="form-control" name="age" required="required" align="right"/>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:white" for="sex">Sex</label>
+                    <input type="text" class="form-control" name="sex" required="required" align="right"/>
+                  </div>
+                  <div class="form-group">
+                    <label style="color:white" for="cp">ChestPainType</label>
+                    <input type="text" class="form-control" name="cp" required="required" align="right" />
+                  </div>
+                  <div class="form-group">
+                    <label style="color:white" for="Rbp">RestingBP</label>
+                    <input type="text" class="form-control" name="Rbp" required="required"align="right" />
+                  </div>
+				  <div class="form-group">
+                    <label style="color:white" for="chol">Cholesterol</label>
+                    <input type="text" class="form-control" name="Chol" required="required"align="right" />
+                  </div>
+				  <div class="form-group">
+                    <label style="color:white" for="fbs">FastingBS</label>
+                    <input type="text" class="form-control" name="fbs" required="required"align="right" />
+                  </div>
+				  <div class="form-group">
+                    <label style="color:white" for="recg">RestingECG</label>
+                    <input type="text" class="form-control" name="recg" required="required"align="right" />
+                  </div>
+				  <div class="form-group">
+                    <label style="color:white" for="mhr">MaxHR</label>
+                    <input type="text" class="form-control" name="mhr" required="required"align="right" />
+                  </div>
+                  <div class="form-group">
+                    <label style="color:white" for="ex">ExerciseAngina</label>
+                    <input type="text" class="form-control" name="ex" required="required"  />
+                  </div>
+				   <div class="form-group">
+                    <label style="color:white" for="op">Oldpeak</label>
+                    <input type="text" class="form-control" name="op" required="required"  />
+                  </div>
+				   <div class="form-group">
+                    <label style="color:white" for="slp">ST_Slope</label>
+                    <input type="text" class="form-control" name="slp" required="required"  />
+                  </div>
+   
+
+                 <br>
+                  <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+		  <br>
+        <center>
+          <h2 style="background:#AFEEEE">{{prediction_text}}</h2>
+        </center>
+        <br />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
